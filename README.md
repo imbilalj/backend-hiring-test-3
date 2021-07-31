@@ -7,6 +7,13 @@ Hope you will have as much fun as we did coding this test!
 
 The purpose of the test is to develop a Books backend API system.
 
+## Bonus
+
+- Use typescript
+- Use NestJS or any other framework like loopback
+
+## Explanation
+
 Books API should be built upon four basic concepts:
 
 ### Volume
