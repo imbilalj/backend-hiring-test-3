@@ -7,11 +7,6 @@ Hope you will have as much fun as we did coding this test!
 
 The purpose of the test is to develop a Books backend API system.
 
-## Bonus
-
-- Use typescript
-- Use NestJS or any other framework like loopback
-
 ## Explanation
 
 Books API should be built upon four basic concepts:
@@ -49,3 +44,13 @@ The volume collection, is a collection of every volume resource managed by Books
 
 ### Bookshelf collection
 A bookshelf collection consists of all the bookshelf resources managed by Books API. Bookshelves must always be referenced in the context of a specific user's library. Bookshelves can contain zero or more volumes. 
+
+## Bonus
+
+- Use typescript
+- Use NestJS or any other framework like loopback
+
+## Code Submit
+Please organize, design, test and document your code as if it were going into production. Fork this repository and send us a pull request. We will review it and get back to you in order to talk about your code! 
+
+All the best and happy coding.
