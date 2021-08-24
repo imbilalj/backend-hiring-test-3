@@ -28,22 +28,23 @@ router.get('/:id', async (req, res) => {
   if (volume) {
     res.json(volume);
   } else {
-    res.status(404).send({ message: 'Book not Found!' });
+    res.status(404).json({ message: 'Book not Found!' });
   }
 });
 
 // @desc    Create new bookshelve against a user ID
 // @route   POST /api/bookshelves/new
 // @access  Private
-router.post('/new', (req, res) => {
-  const newShelf = {
+router.post('/new', async (req, res) => {
+  const newShelf = new Bookshelf({
     user: req.body.userId,
     name: req.body.name,
     volumes: [...req.body.volumes],
     isPrivate: req.body.isPrivate ? req.body.isPrivate : false
-  };
+  });
 
-  Bookshelf.create(newShelf);
+  const insertedBookshelf = await newShelf.save();
+  res.status(201).json(insertedBookshelf);
 });
 
 export default router;

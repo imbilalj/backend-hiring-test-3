@@ -26,4 +26,19 @@ router.get('/:name', async (req, res) => {
   }
 });
 
+// @desc    Create new volume
+// @route   POST /api/volumes/new
+// @access  Private
+router.post('/new', async (req, res) => {
+  const newVolume = new Volume({
+    name: req.body.name,
+    edition: req.body.edition,
+    noOfPages: req.body.noOfPages,
+    author: req.body.author
+  });
+
+  const insertedVolume = await newVolume.save();
+  res.status(201).json(insertedVolume);
+});
+
 export default router;
